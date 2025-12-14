@@ -1,0 +1,24 @@
+# Swaylock configuration with blurred background and clock
+
+# Appearance
+screenshots
+effect-blur=7x5          
+clock
+timestr=%H:%M:%S        
+datestr=%A, %d %B %Y     
+#indicator
+#indicator-radius=250
+#indicator-thickness=7
+
+# Colors (adjust to preference)
+inside-color=00000088
+ring-color=ffffff88
+line-color=ffffff00
+separator-color=00000000
+text-color=ffffffff
+key-hl-color=88c0d0ff
+bs-hl-color=bf616aff
+
+# Hide the keyboard layout
+hide-keyboard-layout
+gg
