@@ -17,19 +17,19 @@ configuration {
 
 window {
   width: 20%;
-  background-color: #282828;
-  border-color: #d8a657;
+  background-color: #333333;
+  border-color: #FFFFFF;
 }
 
 element {
   padding: 8 12;
-  background-color: #282828;
-  text-color: #d8a657;
+  background-color: #333333;
+  text-color: #FFFFFF;
 }
 
 element selected {
-  text-color: #282828;
-  background-color: #d8a657;
+  text-color: #333333;
+  background-color: #FFFFFF;
 }
 
 element-text {
@@ -46,31 +46,31 @@ element-icon {
 
 entry {
   padding: 12;
-  background-color: #282828;
-  text-color: #d8a657;
+  background-color: #333333;
+  text-color: #FFFFFF;
 }
 
 inputbar {
   children: [prompt, entry];
-  background-color: #282828;
+  background-color: #333333;
 }
 
 listview {
-  background-color: #282828;
+  background-color: #333333;
   columns: 1;
   lines: 5;
 }
 
 mainbox {
   children: [inputbar, listview];
-  background-color: #282828;
+  background-color: #333333;
 }
 
 prompt {
   enabled: true;
   padding: 12 0 0 12;
-  background-color: #282828;
-  text-color: #d8a657;
+  background-color: #333333;
+  text-color: #FFFFFF;
 }
 
 /* vim: ft=sass

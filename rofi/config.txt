@@ -9,6 +9,14 @@ configuration {
 @theme "/dev/null"
 
 * {
+  bg: #1e1e2e66;
+  bg-alt: #585b7066;
+  bg-selected: #31324466;
+
+  fg: #cdd6f4;
+  fg-alt: #7f849c;
+
+  
   border: 1;
   margin: 0;
   padding: 0;
@@ -18,18 +26,18 @@ configuration {
 window {
   width: 20%;
   background-color: #282828;
-  border-color: #d8a657;
+  border-color: #ebdbb2;
 }
 
 element {
   padding: 8 12;
   background-color: #282828;
-  text-color: #d8a657;
+  text-color: #ebdbb2;
 }
 
 element selected {
   text-color: #282828;
-  background-color: #d8a657;
+  background-color: #ebdbb2;
 }
 
 element-text {
@@ -41,13 +49,13 @@ element-text {
 element-icon {
   size: 14;
   padding: 0 10 0 0;
-  background-color: transparent;
+ // background-color: transparent;
 }
 
 entry {
   padding: 12;
   background-color: #282828;
-  text-color: #d8a657;
+  text-color: #ebdbb2;
 }
 
 inputbar {
@@ -63,14 +71,14 @@ listview {
 
 mainbox {
   children: [inputbar, listview];
-  background-color: #282828;
+  background-color: @bg;
 }
 
 prompt {
   enabled: true;
   padding: 12 0 0 12;
   background-color: #282828;
-  text-color: #d8a657;
+  text-color: #ebdbb2;
 }
 
 /* vim: ft=sass

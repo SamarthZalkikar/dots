@@ -6,36 +6,36 @@
     show_song_table_header: true,
     draw_borders: true,
     browser_column_widths: [15, 50, 35],
-    background_color: None, 
-    text_color: None,      
+    background_color: Some("#282828"), // Gruvbox dark background
+    text_color: Some("#ebdbb2"),       // Gruvbox foreground
     header_background_color: None,
     modal_background_color: None,
     tab_bar: (
         enabled: true,
-        active_style: (fg: "black", bg: "yellow", modifiers: "Bold"), 
+        active_style: (fg: "#ebdbb2", bg: "#d65d0e", modifiers: "Bold"), // Active Tab: Foreground on ORANGE
         inactive_style: (),
     ),
-    highlighted_item_style: (fg: "yellow", modifiers: "Bold"), 
-    current_item_style: (fg: "black", bg: "yellow", modifiers: "Bold"), 
-    borders_style: (fg: "blue"), 
-    highlight_border_style: (fg: "yellow"), 
+    highlighted_item_style: (fg: "#d65d0e", modifiers: "Bold"), // Highlight: ORANGE
+    current_item_style: (fg: "#ebdbb2", bg: "#d65d0e", modifiers: "Bold"), // Current Item: Foreground on ORANGE
+    borders_style: (fg: "#d65d0e"), // Borders: ORANGE
+    highlight_border_style: (fg: "#d65d0e"), // Highlight Border: ORANGE
     symbols: ( song: "", dir: "", marker: "\u{e0b0}", ellipsis: "..."),
     progress_bar: (
         symbols: ["—", "⭘", "-"],
-        track_style: (fg: "black"), 
-        elapsed_style: (fg: "green"), 
-        thumb_style: (fg: "green"), 
+        track_style: (fg: "#3c3836"), // Darker background for track
+        elapsed_style: (fg: "#d65d0e"), // Elapsed: ORANGE
+        thumb_style: (fg: "#d65d0e"), // Thumb: ORANGE
     ),
     scrollbar: (
         symbols: ["│", "█", "▲", "▼"],
         track_style: (),
         ends_style: (),
-        thumb_style: (fg: "blue"), 
+        thumb_style: (fg: "#d65d0e"), // Scrollbar Thumb: ORANGE
     ),
     song_table_format: [
         (
             prop: (kind: Property(Title),
-                style: (fg: "green", modifiers: "Bold"),
+                style: (fg: "#8ec07c", modifiers: "Bold"), // Title: Gruvbox Green/Cyan
                 default: (kind: Text("Unknown"))
             ),
             width: "30%",
@@ -43,7 +43,7 @@
         ),
         (
             prop: (kind: Property(Artist),
-                style: (fg: "yellow", modifiers: "Bold"),
+                style: (fg: "#fabd2f", modifiers: "Bold"), // Artist: Gruvbox Yellow
                 default: (kind: Text("Unknown"))
             ),
             width: "30%",
@@ -51,7 +51,7 @@
         ),
         (
             prop: (kind: Property(Album),
-                style: (fg: "cyan", modifiers: "Bold"),
+                style: (fg: "#83a598", modifiers: "Bold"), // Album: Gruvbox Aqua/Blue
                 default: (kind: Text("Unknown"))
             ),
             width: "30%",
@@ -59,7 +59,7 @@
         ),
         (
             prop: (kind: Property(Duration),
-                style: (fg: "yellow", modifiers: "Bold"),
+                style: (fg: "#fabd2f", modifiers: "Bold"), // Duration: Gruvbox Yellow
                 default: (kind: Text("-"))
             ),
             width: "10%",
@@ -72,76 +72,77 @@
                 left: [
                     (kind: Property(Status(StateV2(
                         playing_label: "  Playing",
-                        playing_style: (fg: "magenta", modifiers: "Bold"),
+                        playing_style: (fg: "#d3869b", modifiers: "Bold"), // Playing: Gruvbox Magenta
                         paused_label: "  Paused",
-                        paused_style: (fg: "yellow", modifiers: "Bold"),
+                        paused_style: (fg: "#fabd2f", modifiers: "Bold"), // Paused: Gruvbox Yellow
                         stopped_label: "  Stopped"
-                    )))),
+                    ))),
+                    ),
                 ],
                 center: [
-                    (kind: Property(Song(Title)), style: (fg: "yellow", modifiers: "Bold"),
+                    (kind: Property(Song(Title)), style: (fg: "#fabd2f", modifiers: "Bold"), // Song Title: Gruvbox Yellow
                         default: (kind: Text("No Song"), style: (modifiers: "Bold"))
                     )
                 ],
                 right: [
-                    (kind: Property(Widget(ScanStatus)), style: (fg: "cyan")),
-                    (kind: Text("  Vol: "), style: (fg: "blue", modifiers: "Bold")),
-                    (kind: Property(Status(Volume)), style: (fg: "magenta", modifiers: "Bold")),
-                    (kind: Text("%"), style: (fg: "magenta", modifiers: "Bold")),
+                    (kind: Property(Widget(ScanStatus)), style: (fg: "#83a598")), // Scan Status: Gruvbox Blue/Aqua
+                    (kind: Text("  Vol: "), style: (fg: "#d65d0e", modifiers: "Bold")), // Vol Label: ORANGE
+                    (kind: Property(Status(Volume)), style: (fg: "#d3869b", modifiers: "Bold")), // Volume: Gruvbox Magenta
+                    (kind: Text("%"), style: (fg: "#d3869b", modifiers: "Bold")), // %: Gruvbox Magenta
                     (kind: Text(" ")),
                 ]
             ),
             (
                 left: [
-                    (kind: Text("[ "), style: (fg: "yellow")),
-                    (kind: Property(Status(Elapsed)), style: (fg: "magenta", modifiers: "Bold")),
-                    (kind: Text(" / "), style: (fg: "blue", modifiers: "Bold")),
-                    (kind: Property(Status(Duration)), style: (fg: "blue", modifiers: "Bold")),
-                    (kind: Text(" ]"), style: (fg: "yellow")),
+                    (kind: Text("[ "), style: (fg: "#fabd2f")), // Gruvbox Yellow
+                    (kind: Property(Status(Elapsed)), style: (fg: "#d3869b", modifiers: "Bold")), // Elapsed: Gruvbox Magenta
+                    (kind: Text(" / "), style: (fg: "#d65d0e", modifiers: "Bold")), // ORANGE
+                    (kind: Property(Status(Duration)), style: (fg: "#d65d0e", modifiers: "Bold")), // Duration: ORANGE
+                    (kind: Text(" ]"), style: (fg: "#fabd2f")), // Gruvbox Yellow
                 ], 
                 center: [
-                    (kind: Property(Song(Artist)), style: (fg: "cyan", modifiers: "Bold"),
-                        default: (kind: Text("Unknown"), style: (fg: "cyan", modifiers: "Bold"))
+                    (kind: Property(Song(Artist)), style: (fg: "#83a598", modifiers: "Bold"), // Artist: Gruvbox Blue/Aqua
+                        default: (kind: Text("Unknown"), style: (fg: "#83a598", modifiers: "Bold")) // Gruvbox Blue/Aqua
                     ),
-                    (kind: Text(" ["), style: (fg: "yellow", modifiers: "Bold")),
+                    (kind: Text(" ["), style: (fg: "#fabd2f", modifiers: "Bold")), // Gruvbox Yellow
                     (kind: Property(Song(Other("date"))),
-                        style: (fg: "yellow", modifiers: "Bold"),
+                        style: (fg: "#fabd2f", modifiers: "Bold"), // Date: Gruvbox Yellow
                         default: (kind: Text("Unknown Date"))
                     ),
-                    (kind: Text("]"), style: (fg: "yellow", modifiers: "Bold")),
+                    (kind: Text("]"), style: (fg: "#fabd2f", modifiers: "Bold")), // Gruvbox Yellow
                 ],
                 right: [
-                    (kind: Text("[ "), style: (fg: "yellow")),
+                    (kind: Text("[ "), style: (fg: "#fabd2f")), // Gruvbox Yellow
                     (kind: Property(Status(RepeatV2(
                         on_label: " ",
                         off_label: " ",
-                        on_style: (fg: "magenta", modifiers: "Bold"),
-                        off_style: (fg: "blue", modifiers: "Dim")
+                        on_style: (fg: "#d3869b", modifiers: "Bold"), // Repeat On: Gruvbox Magenta
+                        off_style: (fg: "#d65d0e", modifiers: "Dim") // Repeat Off: ORANGE Dim
                     )))),
-                    (kind: Text(" | "), style: (fg: "yellow")),
+                    (kind: Text(" | "), style: (fg: "#fabd2f")), // Gruvbox Yellow
                     (kind: Property(Status(RandomV2(
                         on_label: " ",
                         off_label: " ",
-                        on_style: (fg: "magenta", modifiers: "Bold"),
-                        off_style: (fg: "blue", modifiers: "Dim")
+                        on_style: (fg: "#d3869b", modifiers: "Bold"), // Random On: Gruvbox Magenta
+                        off_style: (fg: "#d65d0e", modifiers: "Dim") // Random Off: ORANGE Dim
                     )))),
-                    (kind: Text(" | "), style: (fg: "yellow")),
+                    (kind: Text(" | "), style: (fg: "#fabd2f")), // Gruvbox Yellow
                     (kind: Property(Status(ConsumeV2(
                         on_label: "",
                         off_label: "",
                         oneshot_label: "",
-                        on_style: (fg: "magenta", modifiers: "Bold"),
-                        off_style: (fg: "blue", modifiers: "Dim")
+                        on_style: (fg: "#d3869b", modifiers: "Bold"), // Consume On: Gruvbox Magenta
+                        off_style: (fg: "#d65d0e", modifiers: "Dim") // Consume Off: ORANGE Dim
                     )))),
-                    (kind: Text(" | "), style: (fg: "yellow")),
+                    (kind: Text(" | "), style: (fg: "#fabd2f")), // Gruvbox Yellow
                     (kind: Property(Status(SingleV2(
                         on_label: " ",
                         off_label: " ",
                         oneshot_label: " ",
-                        on_style: (fg: "magenta", modifiers: "Bold"),
-                        off_style: (fg: "blue", modifiers: "Dim")
+                        on_style: (fg: "#d3869b", modifiers: "Bold"), // Single On: Gruvbox Magenta
+                        off_style: (fg: "#d65d0e", modifiers: "Dim") // Single Off: ORANGE Dim
                     )))),
-                    (kind: Text(" ]"), style: (fg: "yellow")),
+                    (kind: Text(" ]"), style: (fg: "#fabd2f")), // Gruvbox Yellow
                 ]
             ),
         ],

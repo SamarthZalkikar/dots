@@ -7,4 +7,3 @@ include ~/.config/sway/input.conf
 include ~/.config/sway/output.conf
 # include ~/.config/sway/swayfx.conf
 
-exec_always autotiling
