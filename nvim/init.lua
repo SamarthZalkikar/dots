@@ -6,6 +6,8 @@ require("oil").setup()
 vim.opt.undofile = false
 -- vim.opt.makeprg = "g++ % -o %<"  --(for cpp)
 -- vim.opt.makeprg = "gcc % -o %<"    --(for c)
+vim.opt.wrap = true
+vim.opt.linebreak = true
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "cpp",

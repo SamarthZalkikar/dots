@@ -26,7 +26,7 @@
     "battery"
   ],
   "custom/rofi": {
-    "format": "<span ></span>",
+    "format": "<span ></span>",
     "on-click": "rofi -show drun -disable-history -show-icons",
     "on-click-right": "~/.config/custom_scripts/power.sh",
     "escape": true,

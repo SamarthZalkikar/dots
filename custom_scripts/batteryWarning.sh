@@ -1,7 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 check_battery() {
-  batt=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | awk '/percentage/ {print $2}' | tr -d '%')
+  batt=$(upower -i /org/freedesktop/UPower/devices/battery_BAT1 | awk '/percentage/ {print $2}' | tr -d '%')
   if [[ "$batt" -le 20 ]]; then
     notify-send -u critical "⚡ Need Juice" "Battery is at ${batt}%"
   elif [[ "$batt" -le 30 ]]; then
