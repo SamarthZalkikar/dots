@@ -1,17 +1,7 @@
-;; (setq doom-font
-;;       (font-spec :family "ComicShannsMono Nerd Font"
-;;                  :size 18))
-
 (setq doom-font
       (font-spec :family "CaskaydiaCove Nerd Font"
                  :size 18))
 
-;; (setq doom-font
-;;       (font-spec :family "JetBrainsMono Nerd Font Propo"
-;;                  :size 18))
-
-;; (setq doom-theme 'doom-gruvbox)
-;; (setq doom-theme 'doom-tomorrow-day)
 (setq doom-theme 'doom-tomorrow-night)
 
 (setq display-line-numbers-type 'relative)
@@ -24,17 +14,8 @@
 (after! evil
   (evil-set-initial-state 'compilation-mode 'normal))
 
-(setq fancy-splash-image (concat doom-user-dir "Akira_Asai_Anime.png"))
+(setq fancy-splash-image (concat doom-user-dir "vagabond.png"))
 
-(setq my-splash-images
-      '("Akira_Asai_Anime.png"
-        "Anko_OfficerOutfit.png"
-        "Nazuna_SantaOutfit.png"
-        "Nazuna_SchoolUniform.png"
-        "vagabond.png"))
-
-(setq fancy-splash-image
-      (concat doom-user-dir "images/" (nth (random (length my-splash-images)) my-splash-images)))
 
 (remove-hook '+doom-dashboard-functions #'doom-dashboard-widget-shortmenu)
 
