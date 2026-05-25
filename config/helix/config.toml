@@ -1,0 +1,30 @@
+theme = "gruvbox_dark_hard"
+
+[editor]
+line-number = "relative"
+cursorline = true
+auto-save = true
+bufferline = "multiple"
+color-modes = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-modification-indicator"]
+center = []
+right = ["diagnostics", "position", "file-encoding", "file-line-ending", "file-type"]
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+newline = "none"
+
+[keys.normal]
+C-s = ":w"
+C-q = ":q"

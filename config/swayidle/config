@@ -1,0 +1,15 @@
+timeout 300 'notify-send "Locking in 10 seconds" -t 10000'
+
+timeout 310 'swaylock -f -i /home/samarth/Pictures/wallpapers/Graphite_Mono/wallhaven-w55x2q.png'
+
+timeout 330 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
+
+timeout 900 'systemctl suspend'
+
+before-sleep 'swaylock -f -i /home/samarth/Pictures/wallpapers/Graphite_Mono/wallhaven-w55x2q.png'
+
+after-resume 'swaymsg "output * power on"'
+
+lock 'swaylock -f -i /home/samarth/Pictures/wallpapers/Graphite_Mono/wallhaven-w55x2q.png'
+
+unlock 'swaymsg "output * power on"'
