@@ -1,5 +1,4 @@
 # Dots
---
 
 # Screenshot
 ![Screenshot](screenshot.png)
